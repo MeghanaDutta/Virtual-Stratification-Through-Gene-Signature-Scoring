@@ -4,7 +4,7 @@
 The cox_cmdline.R and report.Rmd scripts are designed to perform survival analysis and give visualizations report. These scripts can be executed through the terminal.
 
 ### Input file 
-- test_clin_ssgsea.csv - contains ssgsea scores 
+- test_clin_ssgsea.csv - contains ssgsea scores, disease type along with some miscellaneous information 
 
 
 ### Running scripts through nextflow 
@@ -36,8 +36,6 @@ This scrript performs the virtual stratification.
 It takes 2 inputs - 
 - gene signature score file - test_clin_ssgsea.csv
 - path to the output directory (You could also add a name at the end of the output dir path which you would like to assign to the file). 
-
-The script has TCGA dataset hardcoded in it. It is important to make sure that the clinical data has four columns containing SequencingSampleID, OS.time, vital_status and type of disease in the same order. The clinical file should be free from NA values.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  cd sigmap-pipeline/
