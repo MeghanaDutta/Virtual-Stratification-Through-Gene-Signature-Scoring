@@ -22,8 +22,8 @@ extract <- function(x, sig, type) {
   type <- type
   p.value<-signif(x$waldtest["pvalue"], digits=2)
   logrank.p.value<-signif(x$logtest["pvalue"], digits=2)
-  beta<-signif(x$coef[1], digits=2);#coeficient beta
-  HR <-signif(x$coef[2], digits=2);#exp(beta)
+  beta<-signif(x$coef[1], digits=2);
+  HR <-signif(x$coef[2], digits=2);
   HR.confint.lower <- signif(x$conf.int[,"lower .95"], 2)
   HR.confint.upper <- signif(x$conf.int[,"upper .95"],2)
   res<-c(sig, type, beta, HR, HR.confint.lower, HR.confint.upper, logrank.p.value, p.value)
