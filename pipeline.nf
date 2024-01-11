@@ -29,7 +29,7 @@ output:
  
 script: 
 """
-Rscript -e "rmarkdown::render('$params.r_report', params = list(input_2 = '$scores' , input_3 = '$x'))" 
+Rscript -e "rmarkdown::render('$params.r_report', params = list(input_1 = '$scores' , input_2 = '$x'))" 
 """
 }
 

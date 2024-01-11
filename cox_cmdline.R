@@ -1,12 +1,3 @@
-# function to log each step 
-logging=function(msg, tag="INFO", append=TRUE)
-{
-  msg = paste0("[", Sys.time(), "] ", ifelse(!is.null(tag), paste0(tag, ": ", msg), msg))
-  message(msg)
-  if (tag!="WARN") cat(paste0(msg, "\n"), file= log_file , append=append)
-}
-
-
 # function to load packages 
 load_pkg <- function(pkg) {
   pkg <- as.character(pkg)
@@ -31,6 +22,14 @@ extract <- function(x, sig, type) {
                 "p.value")
   y <- as.data.frame(t(res))
   return(y)
+}
+
+# function to log each step 
+logging=function(msg, tag="INFO", append=TRUE)
+{
+  msg = paste0("[", Sys.time(), "] ", ifelse(!is.null(tag), paste0(tag, ": ", msg), msg))
+  message(msg)
+  if (tag!="WARN") cat(paste0(msg, "\n"), file= log_file , append=append)
 }
 
 
@@ -106,8 +105,6 @@ gene_surv <- function(merge_all, destfold) {
 args <- commandArgs(trailingOnly = TRUE)
 
 # script to run from command line 
-
-
 pkg_to_load <- c("optparse")
 for (pkg in pkg_to_load) {
   load_pkg(pkg)
@@ -145,7 +142,6 @@ if (length(args)>0) {
   
   merge_all <- read_csv(sig_file)
   destfold <- output_file
-  
   gene_surv(merge_all, destfold)
 
   
