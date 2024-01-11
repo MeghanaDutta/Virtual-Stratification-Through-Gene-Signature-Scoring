@@ -4,8 +4,8 @@ author: "Meghana Dutta"
 date: '`r format(Sys.time(), "%Y-%m-%d %H:%M")`'
 output: html_document
 params:
-  input_2 : "sig score"
-  input_3 : "cox results"
+  input_1 : "sig score"
+  input_2 : "cox results"
 ---
 
 
@@ -15,8 +15,8 @@ params:
 ssGSEA scores across all the disease types
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-input_2 <- params$input_2
-tab <- read.csv(input_2)
+input_1 <- params$input_1
+tab <- read.csv(input_1)
 tab <-  as.data.frame(tab)
 
 library(tidyverse)
@@ -47,8 +47,8 @@ tab %>%
 Cox results p-values across all the disease types in bars while the hues tell the hazard ratio's 
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
-input_3 <- params$input_3
-tab_cox <- read.csv(input_3)
+input_2 <- params$input_2
+tab_cox <- read.csv(input_2)
 tab_cox <-  as.data.frame(tab_cox)
 
 summary <- tab_cox %>%
