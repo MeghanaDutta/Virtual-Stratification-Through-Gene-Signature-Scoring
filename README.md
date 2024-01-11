@@ -16,8 +16,8 @@ The cox_cmdline.R and report.Rmd scripts are designed to perform survival analys
 nextflow run pipeline.nf 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Make sure to update nextflow config file with your image ID 
-Paths in nextflow file are set to working directory 
+- Make sure to update nextflow config file with your image ID 
+- Paths in nextflow file are set to working directory 
 
 
 ### Setting up docker 
