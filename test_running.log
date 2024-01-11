@@ -1,0 +1,32 @@
+[2024-01-10 18:16:18.646401] INFO: logging to: test_running.log
+[2024-01-10 18:16:18.650233] INFO: Reading request file
+[2024-01-10 18:16:18.810549] INFO: create list of patient signatures
+[2024-01-10 18:16:18.812265] INFO: Define cox output variables
+[2024-01-10 18:16:18.812402] INFO: Performing cox hazard analysis
+[2024-01-10 18:16:25.675405] INFO: cox hazard analysis performed
+[2024-01-10 18:16:25.675668] INFO: removing incomplete cases
+[2024-01-10 18:16:25.676349] INFO: Creating the ssgsea cox output file
+[2024-01-10 23:19:43.208797] INFO: logging to: test_running.log
+[2024-01-10 23:19:43.217732] INFO: Reading request file
+[2024-01-10 23:19:43.726099] INFO: create list of patient signatures
+[2024-01-10 23:19:43.729872] INFO: Define cox output variables
+[2024-01-10 23:19:43.730522] INFO: Performing cox hazard analysis
+[2024-01-10 23:19:56.402392] INFO: cox hazard analysis performed
+[2024-01-10 23:19:56.403113] INFO: removing incomplete cases
+[2024-01-10 23:19:56.406513] INFO: Creating the ssgsea cox output file
+[2024-01-10 23:22:48.191654] INFO: logging to: test_running.log
+[2024-01-10 23:22:48.201169] INFO: Reading request file
+[2024-01-10 23:22:48.698644] INFO: create list of patient signatures
+[2024-01-10 23:22:48.702328] INFO: Define cox output variables
+[2024-01-10 23:22:48.702991] INFO: Performing cox hazard analysis
+[2024-01-10 23:23:00.533434] INFO: cox hazard analysis performed
+[2024-01-10 23:23:00.53417] INFO: removing incomplete cases
+[2024-01-10 23:23:00.537689] INFO: Creating the ssgsea cox output file
+[2024-01-11 02:54:48.127679] INFO: logging to: test_running.log
+[2024-01-11 02:54:48.137392] INFO: Reading request file
+[2024-01-11 02:54:48.63809] INFO: create list of patient signatures
+[2024-01-11 02:54:48.641679] INFO: Define cox output variables
+[2024-01-11 02:54:48.642674] INFO: Performing cox hazard analysis
+[2024-01-11 02:55:00.532626] INFO: cox hazard analysis performed
+[2024-01-11 02:55:00.533438] INFO: removing incomplete cases
+[2024-01-11 02:55:00.53684] INFO: Creating the ssgsea cox output file

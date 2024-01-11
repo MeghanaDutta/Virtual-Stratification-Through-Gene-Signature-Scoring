@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  rstudio:
+    image: sample_image:1
+    container_name: rstudio_2
+    ports:
+     - "8787:8787"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - "./:/home/rstudio"
+    environment:
+      - ROOT=TRUE
+      - PASSWORD=test

@@ -1,0 +1,97 @@
+---
+title: "Report"
+author: "Meghana Dutta"
+date: '`r format(Sys.time(), "%Y-%m-%d %H:%M")`'
+output: html_document
+params:
+  input_2 : "sig score"
+  input_3 : "cox results"
+---
+
+
+### Box-plot of signature scores across diseases
+
+<br />
+ssGSEA scores across all the disease types
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+input_2 <- params$input_2
+tab <- read.csv(input_2)
+tab <-  as.data.frame(tab)
+
+library(tidyverse)
+install.packages("viridis")
+library(viridis)
+
+color_palette <- viridis_pal()(length(unique(tab$type)))
+
+tab %>%
+  ggplot(aes(x = type, y = ssgsea_scores, fill = type)) +
+  geom_boxplot() +
+  scale_fill_manual(values = color_palette) +
+  theme_light() +
+    theme(
+      legend.position="right",
+      plot.title = element_text(size=15),
+      axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)
+    ) +
+    ggtitle("Basic Boxplot") +
+  labs(x = "Type", , y = "ssGSEA Score",  fill = "Cancer Type")
+
+```
+
+
+### Bar plot of cox results 
+
+<br />
+Cox results p-values across all the disease types in bars while the hues tell the hazard ratio's 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+input_3 <- params$input_3
+tab_cox <- read.csv(input_3)
+tab_cox <-  as.data.frame(tab_cox)
+
+summary <- tab_cox %>%
+  group_by(Type) %>%
+  summarize(Median_HR = median(HR, na.rm = TRUE),
+            Median_pval = median(p.value, na.rm = TRUE))
+
+summary$Type <- reorder(summary$Type, desc(summary$Median_pval))
+
+ggplot(summary, aes(x = as.factor(Type), y = Median_pval, fill = Median_HR)) +
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_c(option = "plasma") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  labs(x = "Cancer type", y = "pvalue", fill = "HR") + 
+  ggtitle("Bar plot of cox results")
+```
+
+### Survival plot of disease type with highest P-value
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(survminer)
+library(survival)
+reordered_levels <- levels(summary$Type)
+highest_type <- reordered_levels[1]
+
+surv <- tab[tab$type == highest_type, ]
+surv$group_s <- ifelse(surv$ssgsea_scores > median(surv$ssgsea_scores), 1, 0)
+fit <- survfit(Surv(OS.time,vital_status) ~ group_s, data = surv)
+
+ggsurvplot(fit, data = surv,
+           title = paste("Survival curve for", highest_type), 
+           font.main = c(13),
+           pval = TRUE,
+           conf.int = TRUE,
+           legend.labs=c("Low Sig Scores", "High Sig Scores"),
+           risk.table = TRUE,
+           risk.table.col = "strata",
+           surv.median.line = "hv",
+           ggtheme = theme_bw() 
+            )
+
+```
+
+
