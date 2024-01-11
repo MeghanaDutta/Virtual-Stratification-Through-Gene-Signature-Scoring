@@ -42,7 +42,7 @@ It takes 2 inputs -
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
- Rscript cox_cmdline.R -i "test_clin_ssgsea_z.csv" -o "test"
+ Rscript cox_cmdline.R -i "test_clin_ssgsea.csv" -o "test"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### report.Rmd
