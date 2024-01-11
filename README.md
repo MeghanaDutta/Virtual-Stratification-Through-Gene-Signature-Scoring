@@ -1,4 +1,4 @@
-## Pipeline for Survival Analysis and report
+## Nextflow Pipeline for Survival Analysis and report
 
 This script conducts survival analysis using Cox proportional hazards modeling, integrating gene signature scores to assess the impact of gene expression patterns on patient outcomes. The analysis stratifies patients based on unique gene signatures and considers different types of patient groups. The implemented functions include data preprocessing, Cox hazard analysis, and the extraction of relevant results such as hazard ratios, confidence intervals, and p-values. The output is a comprehensive summary of the survival analysis results for each gene signature and patient type combination, stored in a CSV file for further examination.
 
