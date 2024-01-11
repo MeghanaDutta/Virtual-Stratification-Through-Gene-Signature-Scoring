@@ -56,7 +56,7 @@ The command line script is as follows -
 
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Rscript -e "rmarkdown::render('report.Rmd', params = list( input_2 = 'test_clin_ssgsea.csv', input_3 = 'test_ssgsea_cox.csv'))"
+Rscript -e "rmarkdown::render('report.Rmd', params = list( input_1 = 'test_clin_ssgsea.csv', input_2 = 'test_ssgsea_cox.csv'))"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The report has the following visualizations - 
