@@ -38,7 +38,6 @@ It takes 2 inputs -
 - path to the output directory (You could also add a name at the end of the output dir path which you would like to assign to the file). 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- cd sigmap-pipeline/
  
  Rscript cox_cmdline.R -i "test_clin_ssgsea_z.csv" -o "test"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,7 +52,6 @@ It takes 2 inputs -
 The command line script is as follows -
 
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- cd sigmap-pipeline/
 
 Rscript -e "rmarkdown::render('report.Rmd', params = list( input_2 = 'test_clin_ssgsea.csv', input_3 = 'test_ssgsea_cox.csv'))"
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
